@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Management System - Services</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: #333;
+            padding: 1rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        /* Main content container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Service card styling */
+        .service-card {
+            flex: 0 1 calc(33.33% - 20px);
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .service-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .service-card p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .service-card {
+                flex: 0 1 calc(50% - 20px);
+            }
+        }
+        @media (max-width: 576px) {
+            .service-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="home">Home</a>
+        <div>
+            <a href="about">About</a>
+            <a href="services">Services</a>
+            <a href="login">Login</a>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+        <!-- Service card 1: Data Management -->
+        <div class="service-card">
+            <h3>Data Management</h3>
+            <p>Secure storage, organization, and encryption of user data. Backup and recovery options available.</p>
+        </div>
+
+        <!-- Service card 2: Task Management -->
+        <div class="service-card">
+            <h3>Task Management</h3>
+            <p>Creation, assignment, and tracking of tasks. Prioritization and scheduling features available.</p>
+        </div>
+
+        <!-- Service card 3: Project Management -->
+        <div class="service-card">
+            <h3>Project Management</h3>
+            <p>Planning, scheduling, and resource allocation for projects. Gantt charts and timeline visualization.</p>
+        </div>
+
+        <!-- Add more service cards here -->
+    </div>
+</body>
+</html>

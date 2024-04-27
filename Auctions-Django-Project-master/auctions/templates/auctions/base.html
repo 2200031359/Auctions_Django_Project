@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Auction System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 1rem 0;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .left-side,
+        .navbar .right-side {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .left-side {
+            flex-grow: 1;
+            justify-content: flex-start;
+        }
+        .navbar .right-side {
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar li {
+            margin-right: 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #555;
+        }
+        .container {
+            padding: 20px;
+            display: flex;
+            margin: -10px;
+            border-top: 1px solid #ddd;
+            background-image: linear-gradient(to bottom right, transparent 50%, #ddd 50%), linear-gradient(to bottom left, transparent 50%, #ddd 50%);
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card {
+            width: calc(33.33% - 20px);
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 5px solid black;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 100px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        .card img {
+            border-radius: 4px;
+            width: 100%;
+            height: auto;
+        }
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .card p {
+            margin: 0;
+            color: #666;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+        .card:hover .card-content {
+            transform: translateY(0);
+        }
+        .card-content {
+            transform: translateY(-10px);
+            transition: transform 0.3s ease;
+        }
+        @media screen and (max-width: 768px) {
+            .card {
+                width: calc(50% - 20px);
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left-side">
+            <a class="navbar-brand" href="#">Your Website</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="right-side">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="services">Services</a></li>
+                <li><a href="login">Login</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Card elements go here -->
+         <div class="container">
+        <div class="card">
+            <img src="static/register.jpg" alt="Person registering">
+            <div class="card-content">
+                <h2>How to Register</h2>
+                <p>To register, click the "Register" button and provide the required information. You will receive a verification email to confirm your account.</p>
+                <a href="register" class="login-btn">Register</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="static/search.jpg" alt="Person searching for items">
+            <div class="card-content">
+                <h2>How to Search for Items</h2>
+                <p>
+                    Use the search bar at the top of the page to search for specific items by keyword. You can also browse items by category using the navigation menu.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="static/bid.jpg" alt="Person placing a bid">
+            <div class="card-content">
+                <h2>How to Place Bids</h2>
+                <p>
+                    To place a bid, find the item you are interested in and enter your bid amount in the "Bid" field. Make sure to check the bid increment and time limits before submitting your bid.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="static/monitor.jpg" alt="Person monitoring bids">
+            <div class="card-content">
+                <h2>How to Monitor Bids</h2>
+                <p>
+                    To monitor your bids, click on the "My Bids" tab in your account dashboard. You will receive notifications when you are outbid.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="static/pay.jpg" alt="Personpaying for items">
+            <div class="card-content">
+                <h2>How to Pay for Items</h2>
+                <p>
+                    After winning an auction, you will receive instructions on how to pay for the item. We accept various payment methods, including credit cards, PayPal, and bank transfers.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="static/receive.jpg" alt="Person receiving items">
+            <div class="card-content">
+                <h2>How to Receive Items</h2>
+                <p>
+                    Items can be shipped to your address or picked up at our warehouse. Shipping costs and delivery times will vary depending on the item and your location.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="static/contact.jpg" alt="Person contacting support">
+            <div class="card-content">
+                <h2>How to Contact Support</h2>
+                <p>
+                    For assistance, please contact our support team at <a href="mailto:support@auctionsystem.com">support@auctionsystem.com</a> or call us at (123) 456-7890.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="static/feedback.jpg" alt="Person leaving feedback">
+            <div class="card-content">
+                <h2>How to Leave Feedback</h2>
+                <p>
+                    After completing an auction, you can leave feedback for the seller and the item. Your feedback will help other users make informed decisions.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="static/report.jpg" alt="Person reporting issues">
+            <div class="card-content">
+                <h2>How to Report Issues</h2>
+                <p>
+                    If you encounter any issues or violations of our terms and conditions, please report them to our support team.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="static/navigate.jpg" alt="Person navigating the site">
+            <div class="card-content">
+                <h2>How to Navigate the Site</h2>
+                <p>
+                    Take a tour of our site to familiarize yourself with the layout and features. If you have any questions, please consult our FAQ or contact our support team.
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

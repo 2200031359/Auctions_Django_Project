@@ -1,0 +1,113 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2 class="page-title">Active Listings</h2>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    <div id="activelist" class="container">
+        {% for list in a1 %}
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="title">{{ list.title }}</h3>
+                    <p class="cat">{{ list.category }}</p>
+                </div>
+                <div class="card-body">
+                    <div class="image-container">
+                        {% if list.image_url %}
+                            <img src="{{ list.image_url }}" alt="{{ list.title }}" class="list_img">
+                        {% else %}
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png" alt="No image provided" class="list_img">
+                        {% endif %}
+                    </div>
+                    <p class="desc">{{ list.desc }}</p>
+                    <p><span class="c_price">Starting Bid:</span> {{ list.starting_bid }} $</p>
+                    <a href="{% url 'listingpage' list.id %}" class="btn">View Bid</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+<style>
+.page-title {
+    margin-top: 20px;
+    font-size: 2.5rem;
+}
+
+.container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    padding: 15px;
+    background-color: #15317E;
+    color: white;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.image-container {
+    margin-bottom: 20px;
+}
+
+.list_img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.cat {
+    margin: 0;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.desc {
+    margin-bottom: 15px;
+}
+
+.c_price {
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #15317E;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0b1a44;
+}
+</style>
